@@ -54,7 +54,7 @@ Login.prototype.submitForm = async function (e) {
     STORE.user = data;
     sessionStorage.setItem("token", data.token);
     if (data.token) {
-      const board = new Board();
+      const board = new Board(".js-content");
       board.render();
     }
   } catch (e) {

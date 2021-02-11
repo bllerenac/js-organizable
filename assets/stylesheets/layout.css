@@ -1,0 +1,53 @@
+.container,
+.container--navbar {
+    display: flex;
+}
+
+.container {
+    width: 900px;
+    min-height: 860px;
+    flex-direction: row;
+}
+
+.container--navbar {
+    flex-direction: column;
+    width: 240px;
+    padding: 24px 0;
+}
+
+.container--navbar a,
+.container--navbar__logout {
+    margin: 8px 0;
+    font-family: var(--roboto);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--narvbar-font-color);
+    padding: 6px 0 6px 32px;
+    cursor: pointer;
+}
+
+.container--navbar a {
+    text-decoration: none;
+}
+
+.container--navbar__logout{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    outline: none;
+    background: var(--background-main);
+    border: none;
+}
+
+.container--navbar a:hover,
+.container--navbar__logout:hover {
+    background-color: var(--background-navbar-hover);
+    color: var(--background-blue);
+    border-radius: 4px;
+}
+
+.container--options {
+    padding: 40px 0 0 29px;
+}

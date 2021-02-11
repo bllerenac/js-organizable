@@ -25,6 +25,7 @@
     line-height: 20px;
     color: var(--narvbar-font-color);
     padding: 6px 0 6px 32px;
+    cursor: pointer;
 }
 
 .container--navbar a {
@@ -44,6 +45,7 @@
 .container--navbar__logout:hover {
     background-color: var(--background-navbar-hover);
     color: var(--background-blue);
+    border-radius: 4px;
 }
 
 .container--options {

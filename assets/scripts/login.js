@@ -8,7 +8,7 @@ export default function Login(parentSelector) {
     this.parentElement = document.querySelector(parentSelector);
     this.toString = function () {
       return `
-        <form class="js-signup-form register-form">
+        <form class="js-login-form register-form">
           <div class="form-control">
           <label>Username</label>
           <input type="text" name="username"required>
@@ -46,15 +46,12 @@ Login.prototype.submitForm = async function (e) {
   e.preventDefault();
   const form = e.target;
   const { username, password } = form;
+  console.log("log in")
   try {
     const sessionsService = new SessionsService();
     const data = await sessionsService.login(username.value, password.value);
     STORE.user = data;
     sessionStorage.setItem("token", data.token);
-    if (data.token) {
-      const board = new Board();
-      board.render();
-    }
   } catch (e) {
     alert(e.message);
   }

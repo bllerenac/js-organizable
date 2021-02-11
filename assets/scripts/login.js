@@ -1,4 +1,5 @@
 import SessionsService from "./services/session_service.js";
+import SignUp from "./signUp.js";
 import STORE from "./store.js";
 
 export default function Login(parentSelector) {
@@ -21,7 +22,7 @@ export default function Login(parentSelector) {
           <div>
           <button type="submit">Submit</button>
           </div>
-          <a href="#signup">Sign Up</a>
+          <a class="js-signup-action" href="#signup">Sign Up</a>
         </form>
       </section>
       `;
@@ -34,6 +35,7 @@ export default function Login(parentSelector) {
 Login.prototype.render = function () {
   this.parentElement.innerHTML = this;
   this.addFormSubmitListener();
+  this.signUpListener()
 };
 
 Login.prototype.addFormSubmitListener = function () {
@@ -59,4 +61,12 @@ Login.prototype.submitForm = async function (e) {
   } catch (e) {
     alert(e.message);
   }
+};
+
+Login.prototype.signUpListener = async function (e) {
+  const signUpSelector = this.parentElement.querySelector(".js-signup-action");
+  signUpSelector.addEventListener("click",(e)=>{
+    const signUp = new SignUp('.js-content');
+    signUp.render();
+  });
 };

@@ -1,4 +1,5 @@
 import SessionsService from "./services/session_service.js";
+import Board from "./board.js"
 import SignUp from "./signUp.js";
 import STORE from "./store.js";
 
@@ -52,6 +53,10 @@ Login.prototype.submitForm = async function (e) {
     const data = await sessionsService.login(username.value, password.value);
     STORE.user = data;
     sessionStorage.setItem("token", data.token);
+    if (data.token) {
+      const board = new Board();
+      board.render();
+    }
   } catch (e) {
     alert(e.message);
   }

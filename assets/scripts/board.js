@@ -13,7 +13,6 @@ export default function Board(parentSelector) {
             {organiz<span class="organizable__able">able</span>}
         </div>
     </header>
-    <main>
         <section class="container">
             <nav class="container--navbar">
                 <a href=" ">My boards</a>
@@ -21,11 +20,16 @@ export default function Board(parentSelector) {
                 <a href=" "> My Profile</a>
                 <button class="js-logout container--navbar__logout">Log out</button>
             </nav>
-            <article class="container--options">
-                <p>Boards</p>
-            </article>
+            <section>
+              <article class="container--options">
+                  <p>Your Starred Board </p>
+              </article>
+              <article class="container--options">
+                  <p>Your Boards</p>
+              </article>
+              <button class="btn_new_board">Create a new Board</button>
+            </section>
         </section>
-    </main>
       `;
     };
     Board.instance = this;

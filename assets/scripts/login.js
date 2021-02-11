@@ -58,7 +58,9 @@ Login.prototype.submitForm = async function (e) {
       board.render();
     }
   } catch (e) {
-    alert(e.message);
+    if(e.message == "[object Object]"){
+      alert("Usuario Incorrecto")
+    }
   }
 };
 

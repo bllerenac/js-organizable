@@ -8,23 +8,20 @@ export default function Login(parentSelector) {
     this.parentElement = document.querySelector(parentSelector);
     this.toString = function () {
       return `
-      <section>
-        <h2>Login</h2>
-        <form class="js-login-form login-form">
-          <div>
+        <form class="js-signup-form register-form">
+          <div class="form-control">
           <label>Username</label>
-          <input type="text" name="username">
+          <input type="text" name="username"required>
           </div>
-          <div>
+          <div class="form-control">
           <label>Password</label>
           <input type="password" name="password">
           </div>
-          <div>
-          <button type="submit">Submit</button>
-          </div>
-          <a class="js-signup-action" href="#signup">Sign Up</a>
+          <div class="form-control">
+          <button type="submit" class="btn btn--primary register-form__button">Submit</button>
+          </div class="form-control">
+          <a class="js-signup-action link" href="#signup">Sign Up</a>
         </form>
-      </section>
       `;
     };
     Login.instance = this;

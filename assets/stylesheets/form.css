@@ -1,0 +1,40 @@
+.register-form{
+  /*TDDO:Cambiar cuando exista el contenedor principal  */
+  margin: 5% auto;
+  /* FIN TODO */
+
+  width: 412px;
+  height: 532px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--background-grey);
+  box-shadow: var(--box-shadow);
+  border-radius: 4px;
+}
+
+.form-control{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control > label {
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+.form-control > input{
+    width: 224px;
+    height: 32px;
+    background: white;
+    border: var(--border-blue);
+    border-radius: 3px;
+    outline: none;
+    padding: 10px;
+}
+
+
+.register-form__button{
+    margin-top: 29px;
+}

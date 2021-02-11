@@ -1,0 +1,21 @@
+.btn{
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn--primary{
+    background: var(--background-green);
+    color: white;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.link{
+    margin-top: 17px;
+    color: var(--color-blue);
+    text-decoration: none;
+    outline: none;
+}

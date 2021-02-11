@@ -1,0 +1,27 @@
+.list-boards{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.list-boards__item{
+    width: 160px;
+    height: 96px;
+    border-radius: 3px;
+    padding: 8px;
+    font-weight: 700;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.list-boards__actions{
+    display: flex;
+    justify-content: flex-end;
+   
+}

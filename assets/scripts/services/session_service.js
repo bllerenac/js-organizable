@@ -18,7 +18,7 @@ SessionsService.prototype.login = (username, password) =>
 
 SessionsService.prototype.logout = () =>
   apiFetch(`${BASE_URL}/logout`, {
-    method: "DELETE",
+    method: "POST",
     headers: {
       Authorization: `Token token=${sessionStorage.getItem("token")}`,
     },

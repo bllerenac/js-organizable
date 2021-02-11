@@ -8,6 +8,7 @@ function UserService() {
   }
 
 UserService.prototype.register = (username, email,first_name,last_name,password) =>
+
   apiFetch(`${BASE_URL}/users`, {
     method: "POST",
     headers: {

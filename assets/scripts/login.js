@@ -1,4 +1,5 @@
 import SessionsService from "./services/session_service.js";
+import Board from "./board.js"
 import SignUp from "./signUp.js";
 import STORE from "./store.js";
 
@@ -8,7 +9,7 @@ export default function Login(parentSelector) {
     this.parentElement = document.querySelector(parentSelector);
     this.toString = function () {
       return `
-        <form class="js-signup-form register-form">
+        <form class="js-login-form register-form">
           <div class="form-control">
           <label>Username</label>
           <input type="text" name="username"required>
@@ -46,6 +47,7 @@ Login.prototype.submitForm = async function (e) {
   e.preventDefault();
   const form = e.target;
   const { username, password } = form;
+  console.log("log in")
   try {
     const sessionsService = new SessionsService();
     const data = await sessionsService.login(username.value, password.value);

@@ -7,6 +7,7 @@ export default function Tooltip(){
 
 Tooltip.prototype.render = function () {
   this.show();
+  this.hidden();
 };
 
 Tooltip.prototype.show = function (){
@@ -15,5 +16,14 @@ Tooltip.prototype.show = function (){
     const tooltip = document.querySelector(".tool_new_board")
     tooltip.classList.remove('hidden')
     console.log("show")
+  });
+};
+
+Tooltip.prototype.hidden = function (){
+  const button_cancel = document.querySelector(".tooltip_hidden")
+  button_cancel.addEventListener("click", (e) => {
+    const tooltip = document.querySelector(".tool_new_board")
+    tooltip.classList.add('hidden')
+    console.log("hidden")
   });
 };

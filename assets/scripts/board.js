@@ -36,7 +36,7 @@ export default function Board(parentSelector) {
                 <div class="container_tool_board_colors">
                   <div class="tool_board">
                     <input type="text" placeholder="Board title"></input>
-                    <button>X</button>
+                    <button class="tooltip_hidden">X</button>
                   </div>
                   <div class="tool_colors">
                     <a href="#" class="IndianRed">IndianRed</a>

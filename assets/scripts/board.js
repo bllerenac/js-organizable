@@ -19,7 +19,7 @@ export default function Board(parentSelector) {
                 <a class="js-select-myboards" href="#">My boards</a>
                 <a class="js-select-closedBoards" href="#">Closed boards</a>
                 <a href=" "> My Profile</a>
-                <button class="container--navbar__logout">Log out</button>
+                <button class="js-logout container--navbar__logout">Log out</button>
             </nav>
             <article class="container--options js-container-options">
                 <p>Boards</p>

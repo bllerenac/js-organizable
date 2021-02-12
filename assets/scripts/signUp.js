@@ -63,9 +63,9 @@ SignUp.prototype.submitForm = async function (e) {
   try {
     const userService = new UserService();
     const data = await userService.register(username.value,email.value,first_name.value,last_name.value,password.value);
-    STORE.user = data;
-    sessionStorage.setItem("token", data.token);
     if (data.token) {
+      STORE.user = data;
+      sessionStorage.setItem("token", data.token);
       const board = new Board();
       board.render();
     }

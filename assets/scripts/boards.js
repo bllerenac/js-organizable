@@ -31,11 +31,14 @@ export default function Boards(parentSelector) {
 
   Boards.prototype.render = function () {
     this.parentElement.innerHTML = this;
-    const boards = this.generateBoards(".js-boards-container")
-
-    boards.forEach(board => {
-      board.addEventListeners();
-    });
+    if (STORE.boards) {
+      
+      const boards = this.generateBoards(".js-boards-container")
+      
+      boards.forEach(board => {
+        board.addEventListeners();
+      });
+    }
   };
   
  

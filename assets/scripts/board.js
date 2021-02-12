@@ -1,5 +1,11 @@
 import Boards from "./boards.js";
 import ClosedBoards from "./closedBoards.js";
+<<<<<<< HEAD
+=======
+import Login from "./login.js";
+import SessionsService from "./services/session_service.js"
+import STORE from "./store.js";
+>>>>>>> 7d61df5689209adcc0ff2e909106183ef522c410
 
 
 export default function Board(parentSelector) {
@@ -38,6 +44,7 @@ Board.prototype.render = function () {
   this.myBoards()
   this.myBoardsListener()
   this.closedBoardsListener()
+  this.Logout();
 };
 
 Board.prototype.myBoards = function () {
@@ -54,6 +61,21 @@ Board.prototype.myBoardsListener = function () {
       const boards = new Boards()
       boards.render()
     })
+<<<<<<< HEAD
+=======
+};
+
+Board.prototype.Logout = async function (e) {
+  const logoutButton = document.querySelector(".js-logout");
+  console.log(logoutButton)
+  logoutButton.addEventListener("click", (e)=>{
+    const sessionsService = new SessionsService();
+    sessionsService.logout();
+    sessionStorage.removeItem("token");
+    const login = new Login(".js-content");
+    login.render();
+  });
+>>>>>>> 7d61df5689209adcc0ff2e909106183ef522c410
 };
 Board.prototype.closedBoardsListener = function () {
   const myBoardAction= document.querySelector('.js-select-closedBoards')

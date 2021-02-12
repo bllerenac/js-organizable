@@ -8,17 +8,17 @@ export default function Board(parentSelector) {
     this.parentElement = document.querySelector(parentSelector);
     this.toString = function () {
       return `
-      <section class="container">
-        <nav class="container--navbar">
-          <a href=" ">My boards</a>
-          <a href=" ">Closed boards</a>
-          <a href=" "> My Profile</a>
-          <button class="container--navbar__logout">Log out</button>
-        </nav>
-        <article class="container--options">
-           <p>Boards</p>
-        </article>
-      </section>
+        <section class="container">
+          <nav class="container--navbar">
+            <a href=" ">My boards</a>
+            <a href=" ">Closed boards</a>
+            <button class="js-myprofile container--navbar__logout"> My Profile</button>
+            <button class="js-logout container--navbar__logout">Log out</button>
+          </nav>
+          <article class="container--options">
+            <p>Boards</p>
+          </article>
+        </section>
       `;
     };
     Board.instance = this;
@@ -28,6 +28,7 @@ export default function Board(parentSelector) {
 
 Board.prototype.render = function () {
   this.parentElement.innerHTML = this;
+  this.profile();
   this.Logout();
 };
 
@@ -41,4 +42,12 @@ Board.prototype.Logout = async function (e) {
     const login = new Login(".js-content");
     login.render();
   });
+};
+
+Board.prototype.profile = async function () {
+  const profileButton = document.querySelector(".js-myprofile");
+  console.log(profileButton);
+  profileButton.addEventListener('click', (e) => {
+    this.parentElement.innerHTML = document.querySelector('.container--options');
+  })
 };

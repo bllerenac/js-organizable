@@ -1,0 +1,23 @@
+.form-control-edit-profile {
+  display: flex;
+  flex-direction: row;
+  width: 224px;
+  justify-content: space-evenly;
+  margin: 16px 0;
+}
+
+.form-control-edit-profile--btn {
+  background: var(--background-button-profile);
+  color: var(--narvbar-font-color);
+  padding: 8px 20px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: normal;
+  font-family: var(--roboto);
+  font-style: normal;
+}
+
+.form-control-edit-profile--btn:hover {
+  background: var(--hover-button-profile);
+  color: var(--white);
+}

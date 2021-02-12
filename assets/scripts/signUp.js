@@ -31,7 +31,7 @@ export default function SignUp(parentSelector) {
                 <input type="text" name="last_name" required>
             </div>
             <div class="form-control">
-                <button class="btn btn--primary register-form__button" type="submit">Create</button>
+                <button class="btn btn--primary register-form__button" type="submit">Create!</button>
             </div>
             <a class="js-signin-action link" href="#signup">or login with existing user</a>
         </form>

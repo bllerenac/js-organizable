@@ -6,7 +6,7 @@ async function init() {
   const board = new Board(".js-content");
 
   if (sessionStorage.getItem("token")) {
-    board.render()
+    board.render();
     return;
   } else {
     login.render();

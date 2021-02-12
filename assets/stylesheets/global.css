@@ -1,27 +1,29 @@
-:root{
-  --background-grey:#F4F5F7;
-  --background-blue:#0079BF;
-  --background-green:#5AAC44;
+:root {
+  --background-grey: #f4f5f7;
+  --background-blue: #0079bf;
+  --background-green: #5aac44;
 
-  --color-blue:#0079BF;
+  --color-blue: #0079bf;
 
-  --border-blue:1px solid #0079BF;
-  --box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
-  --roboto: 'Roboto', sans-serif;
+  --border-blue: 1px solid #0079bf;
+  --box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --roboto: "Roboto", sans-serif;
   --gray: #888888;
-  --background-header: #58595A;
-  --background-main: #E5E5E5;
+  --background-header: #58595a;
+  --background-main: #e5e5e5;
   --white: white;
-  --narvbar-font-color: #172B4D;
-  --background-navbar-hover: #E4F0F6;
+  --narvbar-font-color: #172b4d;
+  --background-navbar-hover: #e4f0f6;
+  --hover-button-profile: #cf513d;
+  --background-button-profile: #ebecf0;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--roboto);
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--roboto);
+}
 
 header,
 main,

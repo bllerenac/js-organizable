@@ -26,24 +26,32 @@ UserService.prototype.update = (
   id,
   username,
   email,
-  firstName,
-  lastName,
+  first_name,
+  last_name,
   password
 ) =>
   apiFetch(`${BASE_URL}/users/${id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Token toke=${sessionStorage.getItem("token")}`,
+      Authorization: `Token token=${sessionStorage.getItem("token")}`,
     },
-    body: JSON.stringify({ username, email, password, firstName, lastName }),
+    body: JSON.stringify({ username, email, password, first_name, last_name }),
   });
 
 UserService.prototype.destroy = (id) =>
   apiFetch(`${BASE_URL}/users/${id}`, {
     method: "DELETE",
     headers: {
-      Authorization: `Token toke=${sessionStorage.getItem("token")}`,
+      Authorization: `Token token=${sessionStorage.getItem("token")}`,
+    },
+  });
+
+UserService.prototype.getUser = (id) =>
+  apiFetch(`${BASE_URL}/users/${id}`, {
+    method: "GET",
+    headers: {
+      Authorization: `Token token=${sessionStorage.getItem("token")}`,
     },
   });
 

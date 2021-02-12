@@ -1,0 +1,46 @@
+import { apiFetch, BASE_URL } from "./apiFetch.js";
+
+function BoardService() {
+  if (!BoardService.instance) {
+    BoardService.instance = this;
+  }
+  return BoardService.instance;
+}
+
+BoardService.prototype.all = () =>
+
+  apiFetch(`${BASE_URL}/boards`, {
+    method: "GET",
+    headers: {
+      Authorization: `Token token=${sessionStorage.getItem('token')}`
+    },
+  });
+
+BoardService.prototype.closed = (id) =>
+
+  apiFetch(`${BASE_URL}/boards/${id}`, {
+    method: "PATCH",
+    headers: {
+      Authorization: `Token token=${sessionStorage.getItem('token')}`,
+      "Content-Type": "application/json",
+    }, body: JSON.stringify({ 'closed': true }),
+  });
+BoardService.prototype.activated = (id) =>
+
+  apiFetch(`${BASE_URL}/boards/${id}`, {
+    method: "PATCH",
+    headers: {
+      Authorization: `Token token=${sessionStorage.getItem('token')}`,
+      "Content-Type": "application/json",
+    }, body: JSON.stringify({ 'closed': false }),
+  });
+
+BoardService.prototype.delete = (id) =>
+
+  apiFetch(`${BASE_URL}/boards/${id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Token token=${sessionStorage.getItem('token')}`,
+    },
+  });
+export default BoardService;

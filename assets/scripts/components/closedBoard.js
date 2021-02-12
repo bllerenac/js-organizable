@@ -11,12 +11,16 @@ export default function ClosedBoard(parentSelector,board ) {
 
     this.toString = function () {
         return `
-    <li class="list-boards__item" style="background-color:${board.color || "white"}">
+    <li class="list-boards__item  bg-${board.color}">
         <p>${board.name}</p>
         <div class="list-boards__actions">
-            <a class="js-activate-board-${this.data.id}" href="#">activate</a>
+            <a class="js-activate-board-${this.data.id}" href="#">
+                <img src="./assets/images/restore.svg"/>
+            </a>
             <div>
-                <a class="js-delete-board-${this.data.id}" href="#123">delete</a>
+                <a class="js-delete-board-${this.data.id}" href="#123">
+                    <img src="./assets/images/delete.svg"/>
+                </a>
             </div>
         </div>
     </li>

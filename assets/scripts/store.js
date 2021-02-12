@@ -1,6 +1,6 @@
 const STORE = {
   user: {},
-  playlists: [],
+  boards: [],
 };
 
 export default STORE;

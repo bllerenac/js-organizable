@@ -1,11 +1,8 @@
 import Boards from "./boards.js";
 import ClosedBoards from "./closedBoards.js";
-<<<<<<< HEAD
-=======
 import Login from "./login.js";
 import SessionsService from "./services/session_service.js"
 import STORE from "./store.js";
->>>>>>> 7d61df5689209adcc0ff2e909106183ef522c410
 
 
 export default function Board(parentSelector) {
@@ -28,7 +25,7 @@ export default function Board(parentSelector) {
                 <button class="js-logout container--navbar__logout">Log out</button>
             </nav>
             <article class="container--options js-container-options">
-                <p>Boards</p>
+             
             </article>
         </section>
     </main>
@@ -45,11 +42,12 @@ Board.prototype.render = function () {
   this.myBoardsListener()
   this.closedBoardsListener()
   this.Logout();
+ 
 };
 
 Board.prototype.myBoards = function () {
   this.parentElement.innerHTML = this;
-  const boards = new  Boards('.container--options')
+  const boards = new Boards('.js-container-options')
   boards.render()
 };
 
@@ -61,21 +59,24 @@ Board.prototype.myBoardsListener = function () {
       const boards = new Boards()
       boards.render()
     })
-<<<<<<< HEAD
-=======
 };
 
 Board.prototype.Logout = async function (e) {
   const logoutButton = document.querySelector(".js-logout");
   console.log(logoutButton)
-  logoutButton.addEventListener("click", (e)=>{
+  logoutButton.addEventListener("click",async  (e)=>{
     const sessionsService = new SessionsService();
-    sessionsService.logout();
-    sessionStorage.removeItem("token");
-    const login = new Login(".js-content");
-    login.render();
+    try {
+      await sessionsService.logout();
+      sessionStorage.removeItem("token");
+      STORE.boards = []
+      STORE.user = {}
+      const login = new Login();
+      login.render();  
+    } catch (error) {
+      alert(error)
+    }
   });
->>>>>>> 7d61df5689209adcc0ff2e909106183ef522c410
 };
 Board.prototype.closedBoardsListener = function () {
   const myBoardAction= document.querySelector('.js-select-closedBoards')

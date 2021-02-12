@@ -66,27 +66,49 @@ main {
   color: var(--gray);
 }
 
+.list-boards__actions{
+  display: flex;
+  gap: 10px;
+}
+
+.bg-blue{
+  background-color: #0079BF;
+
+}
+
+.bg-brown{
+  background-color: #D29034;
+}
+
+.bg-green{
+  background-color: #519839;;
+}
+
+.bg-red{
+  background: #B04632;
+}
+
+.bg-violet{
+  background: #89609E;
+}
 
 
+.bg-green{
+  background: #4BBF6B;
+}
+
+.bg-lightgreen{
+  background: #0AAECB;
+}
+
+.bg-grey{
+  background: #838C90;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.bg-yellow{
+  background: #F7DC6F;
+}
 
 
 

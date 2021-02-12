@@ -1,6 +1,7 @@
 import Login from "./login.js";
 import SessionsService from "./services/session_service.js";
 import STORE from "./store.js";
+import Profile from "./profile.js";
 
 export default function Board(parentSelector) {
   if (!Board.instance) {
@@ -47,7 +48,8 @@ Board.prototype.Logout = async function (e) {
 Board.prototype.profile = async function () {
   const profileButton = document.querySelector(".js-myprofile");
   console.log(profileButton);
-  profileButton.addEventListener('click', (e) => {
-    this.parentElement.innerHTML = document.querySelector('.container--options');
-  })
+  profileButton.addEventListener("click", (e) => {
+    const editProfile = new Profile(".container--options");
+    editProfile.render();
+  });
 };

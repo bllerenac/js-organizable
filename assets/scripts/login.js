@@ -1,5 +1,5 @@
 import SessionsService from "./services/session_service.js";
-import Board from "./board.js"
+import Board from "./board.js";
 import SignUp from "./signUp.js";
 import STORE from "./store.js";
 
@@ -33,7 +33,7 @@ export default function Login(parentSelector) {
 Login.prototype.render = function () {
   this.parentElement.innerHTML = this;
   this.addFormSubmitListener();
-  this.signUpListener()
+  this.signUpListener();
 };
 
 Login.prototype.addFormSubmitListener = function () {
@@ -47,12 +47,13 @@ Login.prototype.submitForm = async function (e) {
   e.preventDefault();
   const form = e.target;
   const { username, password } = form;
-  console.log("log in")
+  console.log("log in");
   try {
     const sessionsService = new SessionsService();
     const data = await sessionsService.login(username.value, password.value);
     STORE.user = data;
     sessionStorage.setItem("token", data.token);
+    sessionStorage.setItem("id", data.id);
     if (data.token) {
       const board = new Board(".js-content");
       board.render();
@@ -64,8 +65,8 @@ Login.prototype.submitForm = async function (e) {
 
 Login.prototype.signUpListener = async function (e) {
   const signUpSelector = this.parentElement.querySelector(".js-signup-action");
-  signUpSelector.addEventListener("click",(e)=>{
-    const signUp = new SignUp('.js-content');
+  signUpSelector.addEventListener("click", (e) => {
+    const signUp = new SignUp(".js-content");
     signUp.render();
   });
 };

@@ -7,6 +7,7 @@ export default function Tooltip(){
 
 Tooltip.prototype.render = function () {
   this.show();
+  this.color_change();
   this.hidden();
 };
 
@@ -27,4 +28,19 @@ Tooltip.prototype.hidden = function (){
     console.log("hidden")
   });
 };
+
+Tooltip.prototype.color_change = function (){
+  const tool_colors = document.querySelector(".tool_colors")
+  tool_colors.addEventListener("click", (e) =>{
+    const colors = tool_colors.querySelectorAll(".tool_colors a");
+    const new_board = document.querySelector(".tool_board");
+    colors.forEach(color => {
+      if(color == e.target){
+        new_board.style.backgroundColor = color.textContent
+        
+      }
+    })
+  })
+};
+
 

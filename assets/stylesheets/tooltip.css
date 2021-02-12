@@ -1,0 +1,83 @@
+.tool_new_board{
+  display: flex;
+  flex-direction: column;
+  width: 272px;
+  height: 107px;
+  gap: 5px;
+}
+
+.container_tool_board_colors{
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.tool_board{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 190px;
+  height: 70px;
+  background-color: IndianRed;
+  padding: 6px 8px 44px 8px;
+}
+  .tool_board input{
+    width: 154px;
+    height: 20px;
+  }
+
+  .tool_board button{
+    width: 11.79px;
+    height: 11.79px;
+  }
+.tool_colors{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 70px;
+  height: 70px;
+}
+
+  .tool_colors a{
+    display: flex;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-family: var(--roboto);
+    font-size: 1px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.IndianRed{
+  background-color: IndianRed;
+}
+.MediumSlateBlue{
+  background-color: MediumSlateBlue;
+}
+.YellowGreen{
+  background-color: YellowGreen;
+}
+.LightBlue{
+  background-color: LightBlue;
+}
+.Chocolate{
+  background-color: Chocolate;
+}
+.SteelBlue{
+  background-color: SteelBlue;
+}
+.MediumAquamarine{
+  background-color: MediumAquamarine;
+}
+.Coral{
+  background-color: Coral;
+}
+.GreenYellow{
+  background-color: GreenYellow;
+}

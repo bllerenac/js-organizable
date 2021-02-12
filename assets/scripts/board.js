@@ -31,6 +31,26 @@ export default function Board(parentSelector) {
                   <p>Your Boards</p>
               </article>
               <button class="btn_new_board">Create a new Board</button>
+              <form class="tool_new_board">
+                <div class="container_tool_board_colors">
+                  <div class="tool_board">
+                    <input type="text" placeholder="Board title"></input>
+                    <button>X</button>
+                  </div>
+                  <div class="tool_colors">
+                    <a href="#" class="IndianRed">IndianRed</a>
+                    <a href="#" class="MediumSlateBlue">MediumSlateBlue</a>
+                    <a href="#" class="YellowGreen">YellowGreen</a>
+                    <a href="#" class="LightBlue">LightBlue</a>
+                    <a href="#" class="Chocolate">Chocolate</a>
+                    <a href="#" class="SteelBlue">SteelBlue</a>
+                    <a href="#" class="MediumAquamarine">MediumAquamarine</a>
+                    <a href="#" class="Coral">Coral</a>
+                    <a href="#" class="GreenYellow">GreenYellow</a>
+                  </div>
+                </div>
+                <button type="submit">Create Board</button>
+              </form>
             </section>
         </section>
       `;

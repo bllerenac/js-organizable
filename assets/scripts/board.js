@@ -2,6 +2,7 @@ import Boards from "./boards.js";
 import ClosedBoards from "./closedBoards.js";
 import Login from "./login.js";
 import SessionsService from "./services/session_service.js"
+import Tooltip from "./components/tooltip.js";
 import STORE from "./store.js";
 
 
@@ -31,11 +32,11 @@ export default function Board(parentSelector) {
                   <p>Your Boards</p>
               </article>
               <button class="btn_new_board">Create a new Board</button>
-              <form class="tool_new_board">
+              <form class="tool_new_board hidden">
                 <div class="container_tool_board_colors">
                   <div class="tool_board">
                     <input type="text" placeholder="Board title"></input>
-                    <button>X</button>
+                    <button class="tooltip_hidden">X</button>
                   </div>
                   <div class="tool_colors">
                     <a href="#" class="IndianRed">IndianRed</a>
@@ -49,7 +50,7 @@ export default function Board(parentSelector) {
                     <a href="#" class="GreenYellow">GreenYellow</a>
                   </div>
                 </div>
-                <button type="submit">Create Board</button>
+                <button class="tool_submit"type="submit">Create Board</button>
               </form>
             </section>
         </section>
@@ -62,10 +63,11 @@ export default function Board(parentSelector) {
 
 Board.prototype.render = function () {
   this.parentElement.innerHTML = this;
-  this.myBoards()
-  this.myBoardsListener()
-  this.closedBoardsListener()
+  this.myBoards();
+  this.myBoardsListener();
+  this.closedBoardsListener();
   this.Logout();
+  this.Tooltip();
 };
 
 Board.prototype.myBoards = function () {
@@ -105,5 +107,9 @@ Board.prototype.closedBoardsListener = function () {
   })
 };
 
+Board.prototype.Tooltip = function(){
+  const tooltip = new Tooltip();
+  return tooltip.render();
+};
 
 

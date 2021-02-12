@@ -32,9 +32,6 @@ export default function Board(parentSelector) {
               </article>
               <button class="btn_new_board">Create a new Board</button>
             </section>
-            <article class="container--options js-container-options">
-                <p>Boards</p>
-            </article>
         </section>
       `;
     };

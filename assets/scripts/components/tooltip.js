@@ -27,3 +27,4 @@ Tooltip.prototype.hidden = function (){
     console.log("hidden")
   });
 };
+

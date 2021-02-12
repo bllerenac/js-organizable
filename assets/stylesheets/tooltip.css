@@ -1,8 +1,8 @@
 .tool_new_board{
   display: flex;
-  position: relative;
-  top: -50%;
-  right: -25%;
+  position: absolute;
+  top: 10%;
+  right: 38%;
   flex-direction: column;
   width: 272px;
   height: 107px;

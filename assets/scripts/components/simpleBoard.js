@@ -4,6 +4,7 @@ import ClosedBoards from "../closedBoards.js"
 import BoardService from "../services/boardService.js"
 import STORE from "../store.js"
 import ShowBoard from "../showBoard.js"
+import ListService from "../services/list_service.js"
 
 export default function SimpleBoard(parentSelector, board) {
 
@@ -74,7 +75,8 @@ SimpleBoard.prototype.showBoard = function () {
     starButton.addEventListener("click", async (e) => {
         try {
             console.log("Click show board")
-            STORE.boardSelected = this.data
+            const board_data = new ListService()
+            STORE.boardSelected = await board_data.all(this.data.id)
             const showBoard = new ShowBoard('.js-content');
             showBoard.render()
         } catch (error) {

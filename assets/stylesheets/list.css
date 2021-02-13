@@ -1,0 +1,28 @@
+.show-board__content{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+.list_content{
+  display: flex;
+  flex-direction: column;
+  background-color:#EBECF0;
+  padding: 10px 8px;
+  gap: 8px;
+  width: 252px;
+  border-radius: 3px;
+}
+
+.list_title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 8px;
+  align-items: center;
+}
+.btn_newCard{
+  text-decoration: none;
+  color: #5E6C84;
+  font-family: var(--roboto);
+
+}

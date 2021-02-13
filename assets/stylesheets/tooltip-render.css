@@ -1,0 +1,117 @@
+.card-to-do {
+  width: 272px;
+  padding: 8px;
+}
+
+.card-to-do__tooltip {
+  display: flex;
+  flex-direction: row;
+  padding: 2px 8px 4px 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tooltip_todo {
+  width: 88%;
+  margin: 0 8px 0 0;
+  font-family: var(--roboto);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  font-style: normal;
+}
+
+.card-to-do__add-card {
+  padding: 8px;
+}
+
+.card-to-do__add-card--doing {
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card-to-do__add-card--doing input {
+  width: 88%;
+  padding: 4px 8px;
+  outline: none;
+}
+
+.card-to-do__add-card--doing i {
+  font-size: 26px;
+  margin: 0 4px 0 0;
+}
+
+.card-to-do__add-card input {
+  width: 88%;
+  padding: 4px 8px;
+  outline: none;
+}
+
+.card-to-do__add-card--send {
+  margin: 8px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.add-card {
+  padding: 6px 10px;
+  text-transform: capitalize;
+  background: var(--background-green);
+  color: var(--white);
+  border: none;
+  outline: none;
+}
+
+.cancel {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin: 0 0 0 8px;
+}
+
+.cancel i {
+  color: var(--icon-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--icon-color);
+  font-size: 14px;
+  padding: 2px 4px;
+  border-radius: 100px;
+}
+
+.tooltip_cancel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.tooltip_cancel i {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--x-icon-color);
+  font-size: 10px;
+  padding: 2px 4px;
+}
+
+.plus {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}

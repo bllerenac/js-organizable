@@ -1,4 +1,4 @@
-.tool_new_board{
+.tool_new_board {
   display: flex;
   position: absolute;
   top: 10%;
@@ -9,13 +9,13 @@
   gap: 5px;
 }
 
-.container_tool_board_colors{
+.container_tool_board_colors {
   display: flex;
   flex-direction: row;
   gap: 12px;
 }
 
-.tool_board{
+.tool_board {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,28 +25,37 @@
   background-color: IndianRed;
   padding: 6px 8px 44px 8px;
 }
-  .tool_board input{
-    width: 154px;
-    height: 20px;
-    padding: 0px 4px;
-    outline: none;
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 3px;
-    border: none;
-  }
-    .tool_board input::placeholder{
-      font-family: var(--roboto);
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 20px;
-      color: rgba(255, 255, 255, 0.75);
-    }
 
-  .tool_board button{
-    width: 11.79px;
-    height: 11.79px;
-  }
-.tool_colors{
+.tooltip_hidden {
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tool_board input {
+  width: 154px;
+  height: 20px;
+  padding: 0px 4px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 3px;
+  border: none;
+}
+.tool_board input::placeholder {
+  font-family: var(--roboto);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.tool_board button {
+  width: 11.79px;
+  height: 11.79px;
+}
+.tool_colors {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -55,26 +64,26 @@
   height: 70px;
 }
 
-  .tool_colors a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    border-radius: 3px;
-    text-decoration: none;
-    font-family: var(--roboto);
-    font-size: 1px;
-    text-decoration: none;
-    color: transparent;
-    cursor: pointer;
-  }
+.tool_colors a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-family: var(--roboto);
+  font-size: 1px;
+  text-decoration: none;
+  color: transparent;
+  cursor: pointer;
+}
 
-.tool_submit{
-  background-color: #F4F5F7;
+.tool_submit {
+  background-color: #f4f5f7;
   width: 109px;
   height: 32px;
-  color: #172B4D;
+  color: #172b4d;
   font-family: var(--roboto);
   font-size: 14px;
   line-height: 20px;
@@ -83,34 +92,34 @@
   cursor: pointer;
 }
 
-.IndianRed{
+.IndianRed {
   background-color: IndianRed;
 }
-.MediumSlateBlue{
+.MediumSlateBlue {
   background-color: MediumSlateBlue;
 }
-.YellowGreen{
+.YellowGreen {
   background-color: YellowGreen;
 }
-.LightBlue{
+.LightBlue {
   background-color: LightBlue;
 }
-.Chocolate{
+.Chocolate {
   background-color: Chocolate;
 }
-.SteelBlue{
+.SteelBlue {
   background-color: SteelBlue;
 }
-.MediumAquamarine{
+.MediumAquamarine {
   background-color: MediumAquamarine;
 }
-.Coral{
+.Coral {
   background-color: Coral;
 }
-.GreenYellow{
+.GreenYellow {
   background-color: GreenYellow;
 }
 
-.hidden{
+.hidden {
   display: none;
 }

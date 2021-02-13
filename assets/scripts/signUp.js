@@ -1,4 +1,4 @@
-import Board from "./board.js";
+import Board from "./main.js";
 import Login from "./login.js";
 import UserService from "./services/userService.js"
 import STORE from "./store.js";

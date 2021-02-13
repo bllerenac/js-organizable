@@ -1,4 +1,4 @@
-import Boards from "./boards.js";
+import Boards from "./my_boards.js";
 import ClosedBoards from "./closedBoards.js";
 import Login from "./login.js";
 import SessionsService from "./services/session_service.js"

@@ -1,5 +1,5 @@
 import SessionsService from "./services/session_service.js";
-import Board from "./board.js"
+import Board from "./main.js"
 import SignUp from "./signUp.js";
 import STORE from "./store.js";
 import BoardService from "./services/boardService.js";

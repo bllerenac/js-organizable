@@ -1,4 +1,4 @@
-import Board from "./assets/scripts/board.js";
+import Board from "./assets/scripts/main.js";
 import Login from "./assets/scripts/login.js";
 import STORE from "./assets/scripts/store.js";
 import BoardService from "./assets/scripts/services/boardService.js"

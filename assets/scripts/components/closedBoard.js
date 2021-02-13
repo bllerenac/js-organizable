@@ -1,5 +1,5 @@
 
-import Boards from "../boards.js"
+import Boards from "../my_boards.js"
 import ClosedBoards from "../closedBoards.js"
 import BoardService from "../services/boardService.js"
 import STORE from "../store.js"

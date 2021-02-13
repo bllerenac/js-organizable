@@ -1,4 +1,4 @@
-import Board from "./board.js";
+import Board from "./main.js";
 import Login from "./login.js";
 import UserService from "./services/userService.js"
 import STORE from "./store.js";
@@ -63,10 +63,10 @@ SignUp.prototype.submitForm = async function (e) {
   try {
     const userService = new UserService();
     const data = await userService.register(username.value,email.value,first_name.value,last_name.value,password.value);
-    STORE.user = data;
-    sessionStorage.setItem("token", data.token);
     if (data.token) {
-      const board = new Board(".js-content");
+      STORE.user = data;
+      sessionStorage.setItem("token", data.token);
+      const board = new Board();
       board.render();
     }
   } catch (e) {

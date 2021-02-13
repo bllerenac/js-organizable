@@ -1,3 +1,5 @@
+import STORE from "../store.js";
+
 export default function Tooltip(){
   if(!Tooltip.instance) {
     Tooltip.instance = this;
@@ -9,6 +11,7 @@ Tooltip.prototype.render = function () {
   this.show();
   this.color_change();
   this.hidden();
+  this.form_submit();
 };
 
 Tooltip.prototype.show = function (){
@@ -36,11 +39,25 @@ Tooltip.prototype.color_change = function (){
     const new_board = document.querySelector(".tool_board");
     colors.forEach(color => {
       if(color == e.target){
-        new_board.style.backgroundColor = color.textContent
-        
+        new_board.style.backgroundColor = color.textContent;
+        return color.textContent;
       }
     })
   })
 };
 
+Tooltip.prototype.form_submit = function (){
+  const tool_form = document.querySelector(".tool_new_board");
+  tool_form.addEventListener("submit", (e) =>{
+    const new_board = document.querySelector(".tool_board"); 
+    if (tool_form == e.target) {
+      const color = new_board.style.backgroundColor
+      try {
+        
+      } catch (e) {
+        
+      }
+    }
+   })
+}
 

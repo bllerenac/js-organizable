@@ -80,6 +80,7 @@
   line-height: 20px;
   border-radius: 3px;
   border: none;
+  cursor: pointer;
 }
 
 .IndianRed{

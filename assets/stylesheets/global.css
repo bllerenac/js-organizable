@@ -66,25 +66,76 @@ main {
   color: var(--gray);
 }
 
+.list-boards__actions{
+  display: flex;
+  gap: 10px;
+}
+
+.blue{
+  background-color: #0079BF;
+}
+
+.brown{
+  background-color: #D29034;
+}
+
+.green{
+  background-color: #519839;;
+}
+
+.red{
+  background: #B04632;
+}
+
+.-violet{
+  background: #89609E;
+}
 
 
+.green{
+  background: #4BBF6B;
+}
+
+.lightgreen{
+  background: #0AAECB;
+}
+
+.grey{
+  background: #838C90;
+}
 
 
+.yellow{
+  background: #F7DC6F;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.IndianRed{
+  background: indianred;
+}
+.MediumSlateBlue{
+  background: mediumslateblue;
+}
+.YellowGreen{
+background: yellowgreen;
+}
+.LightBlue{
+  background: lightblue;
+}
+.Chocolate{
+  background: chocolate;
+}
+.SteelBlue{
+background: steelblue;
+}
+.MediumAquamarine{
+background: mediumaquamarine;
+}
+.Coral{
+background: coral;
+}
+.GreenYellow{
+  background: greenyellow;
+}
 
 
 

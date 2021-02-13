@@ -10,6 +10,8 @@ async function init() {
   const boardService = new BoardService()
   if (sessionStorage.getItem("token")) {
     STORE.boards = await boardService.all()
+    console.log("INIT")
+    console.log(STORE.boards)
     board.render()
     return;
   } else {

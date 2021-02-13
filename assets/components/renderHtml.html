@@ -14,15 +14,32 @@
     </header>
     <main>
         <section class="container">
-            <nav class="container--navbar">
-                <a href=" ">My boards</a>
-                <a href=" ">Closed boards</a>
-                <a href=" "> My Profile</a>
-                <button class="container--navbar__logout">Log out</button>
-            </nav>
-            <article class="container--options">
-                <p>Boards</p>
-            </article>
+          <form class="js-signup-form register-form">
+            <div class="form-control">
+                <label>Username</label>
+                <input type="text" name="username" required>
+            </div>
+            <div class="form-control">
+                <label>Password</label>
+                <input type="password" name="password" required>
+            </div>
+            <div class="form-control">
+                <label>Email</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="form-control">
+                <label>First Name</label>
+                <input type="text" name="first_name" required>
+            </div>
+            <div class="form-control">
+                <label>Last Name</label>
+                <input type="text" name="last_name" required>
+            </div>
+            <div class="form-control-edit-profile">
+              <button class="btn form-control-edit-profile--btn" type="submit">Edit</button>
+              <button class="btn form-control-edit-profile--btn" type="submit">Delete</button>
+            </div>
+          </form>
         </section>
     </main>
   </body>

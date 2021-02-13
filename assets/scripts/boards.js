@@ -9,10 +9,14 @@ export default function Boards(parentSelector) {
     this.toString = function () {
       return `
         <section>
-          <h3>Your Starred Boards</h3>
-          <ul class="js-starredBoards-container list-boards"></ul>
-          <h3>My Boards</h3>
-          <ul class="js-boards-container list-boards"></ul>
+          <div class="content-list">
+            <h3>Your Starred Boards</h3>
+            <ul class="js-starredBoards-container list-boards"></ul>
+          </div>
+          <div class="content-list">
+            <h3>My Boards</h3>
+            <ul class="js-boards-container list-boards"></ul>
+          </div>
         </section>
         `;
     };

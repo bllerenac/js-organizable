@@ -28,7 +28,7 @@ export default function Board(parentSelector) {
               <form class="tool_new_board hidden">
                 <div class="container_tool_board_colors">
                   <div class="tool_board">
-                    <input type="text" placeholder="Board title"></input>
+                    <input name="board_name" type="text" placeholder="Board title"></input>
                     <button class="tooltip_hidden">X</button>
                   </div>
                   <div class="tool_colors">
@@ -43,7 +43,7 @@ export default function Board(parentSelector) {
                     <a href="#" class="GreenYellow">GreenYellow</a>
                   </div>
                 </div>
-                <button class="tool_submit"type="submit">Create Board</button>
+                <button class="tool_submit" type="submit">Create Board</button>
               </form>
             </section>
         </section>

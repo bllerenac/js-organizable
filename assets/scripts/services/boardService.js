@@ -52,4 +52,14 @@ BoardService.prototype.delete = (id) =>
       Authorization: `Token token=${sessionStorage.getItem('token')}`,
     },
   });
+
+BoardService.prototype.create = (name, closed, color, starred) =>
+  apiFetch(`${BASE_URL}/boards`, {
+    method: "POST" ,
+    headers: {
+      Authorization: `Token token=${sessionStorage.getItem('token')}`,
+      "Content-Type": "application/json",
+    }, body: JSON.stringify({ name, closed, color, starred}),
+  });
+
 export default BoardService;

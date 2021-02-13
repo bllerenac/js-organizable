@@ -34,6 +34,15 @@ BoardService.prototype.activated = (id) =>
       "Content-Type": "application/json",
     }, body: JSON.stringify({ 'closed': false }),
   });
+BoardService.prototype.starred = (id,status) =>
+
+  apiFetch(`${BASE_URL}/boards/${id}`, {
+    method: "PATCH",
+    headers: {
+      Authorization: `Token token=${sessionStorage.getItem('token')}`,
+      "Content-Type": "application/json",
+    }, body: JSON.stringify({ 'starred': status }),
+});
 
 BoardService.prototype.delete = (id) =>
 

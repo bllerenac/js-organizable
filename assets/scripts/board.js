@@ -25,10 +25,7 @@ export default function Board(parentSelector) {
                 <button class="js-logout container--navbar__logout">Log out</button>
             </nav>
             <section>
-              <article class="container--options">
-                  <p>Your Starred Board </p>
-              </article>
-              <article class="container--options">
+              <article class="container--options js-container-options">
                   <p>Your Boards</p>
               </article>
               <button class="btn_new_board">Create a new Board</button>
@@ -72,7 +69,7 @@ Board.prototype.render = function () {
 
 Board.prototype.myBoards = function () {
   this.parentElement.innerHTML = this;
-  const boards = new  Boards('.container--options')
+  const boards = new Boards('.js-container-options')
   boards.render()
 };
 
@@ -88,8 +85,8 @@ Board.prototype.myBoardsListener = function () {
 
 Board.prototype.Logout = async function (e) {
   const logoutButton = document.querySelector(".js-logout");
-  console.log(logoutButton)
-  logoutButton.addEventListener("click", (e)=>{
+  console.log(logoutButton);
+  logoutButton.addEventListener("click", (e) => {
     const sessionsService = new SessionsService();
     sessionsService.logout();
     sessionStorage.removeItem("token");
@@ -97,6 +94,8 @@ Board.prototype.Logout = async function (e) {
     login.render();
   });
 };
+
+
 Board.prototype.closedBoardsListener = function () {
   const myBoardAction= document.querySelector('.js-select-closedBoards')
   myBoardAction.addEventListener("click",(e)=>{

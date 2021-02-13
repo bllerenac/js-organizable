@@ -12,11 +12,7 @@ export default function Board(parentSelector) {
     this.parentElement = document.querySelector(parentSelector);
     this.toString = function () {
       return `
-      <header>
-        <div class="organizable">
-            {organiz<span class="organizable__able">able</span>}
-        </div>
-    </header>
+
         <section class="container">
             <nav class="container--navbar">
                 <a class="js-select-myboards" href="#">My boards</a>
@@ -76,7 +72,6 @@ Board.prototype.myBoards = function () {
 Board.prototype.myBoardsListener = function () {
   const myBoardAction= document.querySelector('.js-select-myboards')
   myBoardAction.addEventListener("click",(e)=>{
-      console.log("select boards ")
       e.preventDefault()
       const boards = new Boards()
       boards.render()
@@ -85,7 +80,6 @@ Board.prototype.myBoardsListener = function () {
 
 Board.prototype.Logout = async function (e) {
   const logoutButton = document.querySelector(".js-logout");
-  console.log(logoutButton);
   logoutButton.addEventListener("click", (e) => {
     const sessionsService = new SessionsService();
     sessionsService.logout();
@@ -95,11 +89,9 @@ Board.prototype.Logout = async function (e) {
   });
 };
 
-
 Board.prototype.closedBoardsListener = function () {
   const myBoardAction= document.querySelector('.js-select-closedBoards')
   myBoardAction.addEventListener("click",(e)=>{
-      console.log("slect closed boards")
       e.preventDefault()
       const closedBoards = new ClosedBoards('.container--options')
       closedBoards.render()

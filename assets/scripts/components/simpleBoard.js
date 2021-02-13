@@ -3,19 +3,16 @@ import Boards from "../my_boards.js"
 import ClosedBoards from "../closedBoards.js"
 import BoardService from "../services/boardService.js"
 import STORE from "../store.js"
+import ShowBoard from "../showBoard.js"
 
 export default function SimpleBoard(parentSelector, board) {
-    console.log(parentSelector)
-    console.log(document)
-    console.log( document.querySelector(".js-boards-container"))
-    this.parentElement = document.querySelector(parentSelector)
-    console.log(this.parentElement)
-    this.data = board
 
+    this.parentElement = document.querySelector(parentSelector)
+    this.data = board
     this.toString = function () {
         return `
     <li class="list-boards__item ${board.color}" >
-        <p>${board.name}</p>
+        <a class="js-show-board-${this.data.id} a-show">${board.name}</a>
         <div class="list-boards__actions">
             <a class="js-closed-board-${this.data.id}" href="#delete">
                 <img src="./assets/images/closed.svg"/>
@@ -31,6 +28,7 @@ export default function SimpleBoard(parentSelector, board) {
 SimpleBoard.prototype.addEventListeners = function () {
     this.listenClosedClick();
     this.listenStarClick()
+    this.showBoard()
 };
 
 // Poner nombre mas apropiado a boton po favo :')
@@ -50,18 +48,16 @@ SimpleBoard.prototype.listenClosedClick = function () {
             alert(error)
         }
 
-    }) 
+    })
 }
 
 SimpleBoard.prototype.listenStarClick = function () {
     const starButton = this.parentElement.querySelector(`.js-star-board-${this.data.id}`);
     starButton.addEventListener("click", async (e) => {
         try {
-            console.log("Listen Star click")
-            
             const boardService = new BoardService()
             let status = this.data.starred
-            const rsp = await boardService.starred(this.data.id,!status)
+            const rsp = await boardService.starred(this.data.id, !status)
             STORE.boards = await boardService.all()
             const boards = new Boards();
             boards.render()
@@ -72,3 +68,19 @@ SimpleBoard.prototype.listenStarClick = function () {
 
     })
 }
+
+SimpleBoard.prototype.showBoard = function () {
+    const starButton = this.parentElement.querySelector(`.js-show-board-${this.data.id}`);
+    starButton.addEventListener("click", async (e) => {
+        try {
+            console.log("Click show board")
+            STORE.boardSelected = this.data
+            const showBoard = new ShowBoard('.js-content');
+            showBoard.render()
+        } catch (error) {
+            console.log(error)
+        }
+
+    })
+}
+

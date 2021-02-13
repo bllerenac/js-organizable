@@ -11,7 +11,7 @@ export default function ClosedBoard(parentSelector,board ) {
 
     this.toString = function () {
         return `
-    <li class="list-boards__item  bg-${board.color}">
+    <li class="list-boards__item  ${board.color}">
         <p>${board.name}</p>
         <div class="list-boards__actions">
             <a class="js-activate-board-${this.data.id}" href="#">

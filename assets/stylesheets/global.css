@@ -71,44 +71,73 @@ main {
   gap: 10px;
 }
 
-.bg-blue{
+.blue{
   background-color: #0079BF;
-
 }
 
-.bg-brown{
+.brown{
   background-color: #D29034;
 }
 
-.bg-green{
+.green{
   background-color: #519839;;
 }
 
-.bg-red{
+.red{
   background: #B04632;
 }
 
-.bg-violet{
+.-violet{
   background: #89609E;
 }
 
 
-.bg-green{
+.green{
   background: #4BBF6B;
 }
 
-.bg-lightgreen{
+.lightgreen{
   background: #0AAECB;
 }
 
-.bg-grey{
+.grey{
   background: #838C90;
 }
 
 
-.bg-yellow{
+.yellow{
   background: #F7DC6F;
 }
+
+.IndianRed{
+  background: indianred;
+}
+.MediumSlateBlue{
+  background: mediumslateblue;
+}
+.YellowGreen{
+background: yellowgreen;
+}
+.LightBlue{
+  background: lightblue;
+}
+.Chocolate{
+  background: chocolate;
+}
+.SteelBlue{
+background: steelblue;
+}
+.MediumAquamarine{
+background: mediumaquamarine;
+}
+.Coral{
+background: coral;
+}
+.GreenYellow{
+  background: greenyellow;
+}
+
+
 
 
 

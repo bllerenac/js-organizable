@@ -14,7 +14,7 @@ export default function SimpleBoard(parentSelector, board) {
 
     this.toString = function () {
         return `
-    <li class="list-boards__item bg-${board.color}" >
+    <li class="list-boards__item ${board.color}" >
         <p>${board.name}</p>
         <div class="list-boards__actions">
             <a class="js-closed-board-${this.data.id}" href="#delete">
@@ -58,12 +58,13 @@ SimpleBoard.prototype.listenStarClick = function () {
     starButton.addEventListener("click", async (e) => {
         try {
             console.log("Listen Star click")
-            // const boardService = new BoardService()
-
-            // const rsp = await boardService.closed(this.data.id)
-            // STORE.boards = await boardService.all()
-            // const boards = new Boards();
-            // boards.render()
+            
+            const boardService = new BoardService()
+            let status = this.data.starred
+            const rsp = await boardService.starred(this.data.id,!status)
+            STORE.boards = await boardService.all()
+            const boards = new Boards();
+            boards.render()
 
         } catch (error) {
             alert(error)

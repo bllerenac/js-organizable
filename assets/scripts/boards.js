@@ -9,6 +9,8 @@ export default function Boards(parentSelector) {
     this.toString = function () {
       return `
         <section>
+          <h3>Your Starred Boards</h3>
+          <ul class="js-starredBoards-container list-boards"></ul>
           <h3>My Boards</h3>
           <ul class="js-boards-container list-boards"></ul>
         </section>
@@ -28,11 +30,26 @@ Boards.prototype.generateBoards = function(parentSelector) {
   return boards;
 };
 
+Boards.prototype.generateBoardsStarred = function(parentSelector) {
+  const container = this.parentElement.querySelector(parentSelector);
+  const boards = STORE.boards.filter(board=> !board.closed && board.starred).map((board) => {
+    return new SimpleBoard(parentSelector, board);
+  });
+  container.innerHTML = boards.join("");
+  return boards;
+};
+
 Boards.prototype.render = function () {
   this.parentElement.innerHTML = this;
   const boards = this.generateBoards(".js-boards-container")
 
   boards.forEach(board => {
+    board.addEventListeners();
+  });
+
+  const starBoards = this.generateBoardsStarred(".js-starredBoards-container")
+
+  starBoards.forEach(board => {
     board.addEventListeners();
   });
 };

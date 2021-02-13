@@ -2,6 +2,7 @@ import Boards from "./boards.js";
 import ClosedBoards from "./closedBoards.js";
 import Login from "./login.js";
 import SessionsService from "./services/session_service.js"
+import Tooltip from "./components/tooltip.js";
 import STORE from "./store.js";
 
 
@@ -16,7 +17,6 @@ export default function Board(parentSelector) {
             {organiz<span class="organizable__able">able</span>}
         </div>
     </header>
-    <main>
         <section class="container">
             <nav class="container--navbar">
                 <a class="js-select-myboards" href="#">My boards</a>
@@ -24,11 +24,33 @@ export default function Board(parentSelector) {
                 <a href=" "> My Profile</a>
                 <button class="js-logout container--navbar__logout">Log out</button>
             </nav>
-            <article class="container--options js-container-options">
-             
-            </article>
+            <section>
+              <article class="container--options js-container-options">
+                  <p>Your Boards</p>
+              </article>
+              <button class="btn_new_board">Create a new Board</button>
+              <form class="tool_new_board hidden">
+                <div class="container_tool_board_colors">
+                  <div class="tool_board">
+                    <input type="text" placeholder="Board title"></input>
+                    <button class="tooltip_hidden">X</button>
+                  </div>
+                  <div class="tool_colors">
+                    <a href="#" class="IndianRed">IndianRed</a>
+                    <a href="#" class="MediumSlateBlue">MediumSlateBlue</a>
+                    <a href="#" class="YellowGreen">YellowGreen</a>
+                    <a href="#" class="LightBlue">LightBlue</a>
+                    <a href="#" class="Chocolate">Chocolate</a>
+                    <a href="#" class="SteelBlue">SteelBlue</a>
+                    <a href="#" class="MediumAquamarine">MediumAquamarine</a>
+                    <a href="#" class="Coral">Coral</a>
+                    <a href="#" class="GreenYellow">GreenYellow</a>
+                  </div>
+                </div>
+                <button class="tool_submit"type="submit">Create Board</button>
+              </form>
+            </section>
         </section>
-    </main>
       `;
     };
     Board.instance = this;
@@ -38,11 +60,11 @@ export default function Board(parentSelector) {
 
 Board.prototype.render = function () {
   this.parentElement.innerHTML = this;
-  this.myBoards()
-  this.myBoardsListener()
-  this.closedBoardsListener()
+  this.myBoards();
+  this.myBoardsListener();
+  this.closedBoardsListener();
   this.Logout();
- 
+  this.Tooltip();
 };
 
 Board.prototype.myBoards = function () {
@@ -63,21 +85,17 @@ Board.prototype.myBoardsListener = function () {
 
 Board.prototype.Logout = async function (e) {
   const logoutButton = document.querySelector(".js-logout");
-  console.log(logoutButton)
-  logoutButton.addEventListener("click",async  (e)=>{
+  console.log(logoutButton);
+  logoutButton.addEventListener("click", (e) => {
     const sessionsService = new SessionsService();
-    try {
-      await sessionsService.logout();
-      sessionStorage.removeItem("token");
-      STORE.boards = []
-      STORE.user = {}
-      const login = new Login();
-      login.render();  
-    } catch (error) {
-      alert(error)
-    }
+    sessionsService.logout();
+    sessionStorage.removeItem("token");
+    const login = new Login(".js-content");
+    login.render();
   });
 };
+
+
 Board.prototype.closedBoardsListener = function () {
   const myBoardAction= document.querySelector('.js-select-closedBoards')
   myBoardAction.addEventListener("click",(e)=>{
@@ -88,5 +106,9 @@ Board.prototype.closedBoardsListener = function () {
   })
 };
 
+Board.prototype.Tooltip = function(){
+  const tooltip = new Tooltip();
+  return tooltip.render();
+};
 
 

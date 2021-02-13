@@ -19,3 +19,15 @@
     text-decoration: none;
     outline: none;
 }
+
+.btn_new_board{
+    border: none;
+    outline: none;
+    background-color: #F0F2F5;
+    color: #172B4D;
+    font-family: var(--roboto);
+    font-size: 16px;
+    line-height: 20px;
+    padding: 38px 26px;
+    cursor: pointer;
+}

@@ -5,54 +5,16 @@ function UserService() {
     UserService.instance = this;
   }
   return UserService.instance;
-}
+  }
 
-UserService.prototype.register = (
-  username,
-  email,
-  first_name,
-  last_name,
-  password
-) =>
+UserService.prototype.register = (username, email,first_name,last_name,password) =>
   apiFetch(`${BASE_URL}/users`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ username, email, first_name, last_name, password }),
-  });
+    body: JSON.stringify({ username, email,first_name, last_name,password}),
+});
 
-UserService.prototype.update = (
-  id,
-  username,
-  email,
-  first_name,
-  last_name,
-  password
-) =>
-  apiFetch(`${BASE_URL}/users/${id}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Token token=${sessionStorage.getItem("token")}`,
-    },
-    body: JSON.stringify({ username, email, password, first_name, last_name }),
-  });
 
-UserService.prototype.destroy = (id) =>
-  apiFetch(`${BASE_URL}/users/${id}`, {
-    method: "DELETE",
-    headers: {
-      Authorization: `Token token=${sessionStorage.getItem("token")}`,
-    },
-  });
-
-UserService.prototype.getUser = (id) =>
-  apiFetch(`${BASE_URL}/users/${id}`, {
-    method: "GET",
-    headers: {
-      Authorization: `Token token=${sessionStorage.getItem("token")}`,
-    },
-  });
-
-export default UserService;
+export default UserService; 

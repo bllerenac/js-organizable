@@ -1,6 +1,6 @@
 import Board from "./board.js";
 import Login from "./login.js";
-import UserService from "./services/userService.js";
+import UserService from "./services/userService.js"
 import STORE from "./store.js";
 
 export default function SignUp(parentSelector) {
@@ -31,7 +31,7 @@ export default function SignUp(parentSelector) {
                 <input type="text" name="last_name" required>
             </div>
             <div class="form-control">
-                <button class="btn btn--primary register-form__button" type="submit">Create!</button>
+                <button class="btn btn--primary register-form__button" type="submit">Create</button>
             </div>
             <a class="js-signin-action link" href="#signup">or login with existing user</a>
         </form>
@@ -58,17 +58,11 @@ SignUp.prototype.addFormSubmitListener = function () {
 SignUp.prototype.submitForm = async function (e) {
   e.preventDefault();
   const form = e.target;
-  const { username, password, email, first_name, last_name } = form;
-  console.log(username, password, email, first_name, last_name);
+  const { username, password ,email,first_name,last_name} = form;
+  console.log(username,password,email,first_name,last_name)
   try {
     const userService = new UserService();
-    const data = await userService.register(
-      username.value,
-      email.value,
-      first_name.value,
-      last_name.value,
-      password.value
-    );
+    const data = await userService.register(username.value,email.value,first_name.value,last_name.value,password.value);
     if (data.token) {
       STORE.user = data;
       sessionStorage.setItem("token", data.token);
@@ -78,12 +72,12 @@ SignUp.prototype.submitForm = async function (e) {
   } catch (e) {
     alert(e.message);
   }
-};
+}; 
 
 SignUp.prototype.signInListener = async function (e) {
-  const signInSelector = this.parentElement.querySelector(".js-signin-action");
-  signInSelector.addEventListener("click", (e) => {
-    const login = new Login();
-    login.render();
-  });
-};
+    const signInSelector = this.parentElement.querySelector(".js-signin-action");
+    signInSelector.addEventListener("click",(e)=>{
+      const login = new Login();
+      login.render();
+    });
+  };

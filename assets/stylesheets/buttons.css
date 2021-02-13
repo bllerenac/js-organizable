@@ -31,3 +31,8 @@
     padding: 38px 26px;
     cursor: pointer;
 }
+
+.btn_close_list{
+    background-color: transparent;
+    border: none;
+}

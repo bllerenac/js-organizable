@@ -1,6 +1,6 @@
 import STORE from "../store.js";
 import BoardService from "../services/boardService.js"
-import Board from "../board.js"
+import Board from "../main.js"
 
 export default function Tooltip(){
   if(!Tooltip.instance) {

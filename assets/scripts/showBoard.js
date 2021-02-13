@@ -1,5 +1,6 @@
 import STORE from "./store.js";
 import List from "./show_board/lists.js"
+import Card from "./show_board/cards.js";
 
 export default function ShowBoard(parentSelector){
   if (!ShowBoard.instance) {
@@ -33,16 +34,20 @@ export default function ShowBoard(parentSelector){
   
 ShowBoard.prototype.render = function () {
    this.parentElement.innerHTML = this;
-   this.renderList();
+   const lists = this.renderList(".show-board__content")
+   lists.forEach( (list) => {
+     list.renderCards();
+   });
 };
 
-ShowBoard.prototype.renderList = function () {
+ShowBoard.prototype.renderList = function (parentSelector) {
   const data = STORE.boardSelected.lists;
-  const board__content = document.querySelector(".show-board__content");
+  const list__content = document.querySelector(parentSelector);
   const list_render = data.map((list_data) => {
-    console.log(list_data)
-    return new List(".show-board__content",list_data);
+    //console.log(list_data)
+    return  new List(parentSelector,list_data);
   });
 
-  return board__content.innerHTML = list_render.join("") 
+  list__content.innerHTML = list_render.join("");
+  return list_render;
 }

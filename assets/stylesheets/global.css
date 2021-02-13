@@ -21,8 +21,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--roboto);
+ 
   }
 
+  body{
+    width: 100vw;
+  }
 header,
 main,
 .organizable {
@@ -41,6 +45,7 @@ header {
 }
 
 main {
+
   background: var(--background-main);
 }
 

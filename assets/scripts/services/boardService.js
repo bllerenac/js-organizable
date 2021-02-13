@@ -50,7 +50,7 @@ BoardService.prototype.create = (name, closed, color, starred) =>
     headers: {
       Authorization: `Token token=${sessionStorage.getItem('token')}`,
       "Content-Type": "application/json",
-    }, body: JSON.stringify({ name, closed, color, starred})
+    }, body: JSON.stringify({ name, closed, color, starred}),
   });
 
 export default BoardService;

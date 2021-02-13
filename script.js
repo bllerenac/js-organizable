@@ -15,6 +15,10 @@ async function init() {
     STORE.user = await userService.getUser(idUser);
     STORE.boards = await boardService.all();
     board.render();
+    // STORE.boards = await boardService.all()
+    console.log("INIT");
+    console.log(STORE.boards);
+    board.render();
     return;
   } else {
     login.render();

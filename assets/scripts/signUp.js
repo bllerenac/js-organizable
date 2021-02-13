@@ -69,10 +69,9 @@ SignUp.prototype.submitForm = async function (e) {
       last_name.value,
       password.value
     );
-    STORE.user = data;
-    sessionStorage.setItem("token", data.token);
-    sessionStorage.setItem("id", data.id);
     if (data.token) {
+      STORE.user = data;
+      sessionStorage.setItem("token", data.token);
       const board = new Board();
       board.render();
     }

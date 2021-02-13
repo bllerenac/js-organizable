@@ -2,6 +2,7 @@ import SessionsService from "./services/session_service.js";
 import Board from "./board.js";
 import SignUp from "./signUp.js";
 import STORE from "./store.js";
+import BoardService from "./services/boardService.js";
 
 export default function Login(parentSelector) {
   if (!Login.instance) {
@@ -47,13 +48,15 @@ Login.prototype.submitForm = async function (e) {
   e.preventDefault();
   const form = e.target;
   const { username, password } = form;
-  console.log("log in");
+  console.log("log in")
+  const boardService = new BoardService()
   try {
     const sessionsService = new SessionsService();
     const data = await sessionsService.login(username.value, password.value);
     STORE.user = data;
     sessionStorage.setItem("token", data.token);
     sessionStorage.setItem("id", data.id);
+    STORE.boards = await boardService.all()
     if (data.token) {
       const board = new Board(".js-content");
       board.render();

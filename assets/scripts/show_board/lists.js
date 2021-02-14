@@ -44,6 +44,9 @@ List.prototype.generateCards = function(parentSelector) {
 
 List.prototype.renderCards = function(){
   const cards = this.generateCards(`.js_cards`);
+  cards.forEach( (card) => {
+    card.renderLabels();
+  });
   //console.log(cards)
   //cards.forEach( (card) =>{ });
 }

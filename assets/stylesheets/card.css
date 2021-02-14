@@ -4,3 +4,16 @@
   background-color: none; 
   gap: 8px;
 }
+
+.card_labels{
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.label{
+  width: 40px;
+  height: 8px;
+  border: none;
+  border-radius: 4px;
+}

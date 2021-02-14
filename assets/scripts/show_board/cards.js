@@ -6,7 +6,7 @@ export default function Card(parentSelector,card_data) {
     this.data = card_data
     this.toString = function () {
         return `
-        <button>
+        <button class="btn-card">
           ${this.data.name}
         </button>
         `;

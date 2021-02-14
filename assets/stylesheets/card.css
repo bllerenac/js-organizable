@@ -1,0 +1,6 @@
+.js_cards{
+  display: flex;
+  flex-direction: column;
+  background-color: none; 
+  gap: 8px;
+}

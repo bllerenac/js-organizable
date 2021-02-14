@@ -16,7 +16,7 @@ export default function List(parentSelector,list_data) {
             </button>
           </div>
           <div class="js_cards">
-            card contet
+          
           </div>
           <a href="#" class="btn_newCard">
             <img src="./assets/images/closed.svg" />

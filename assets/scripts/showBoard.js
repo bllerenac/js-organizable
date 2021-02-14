@@ -35,20 +35,19 @@ export default function ShowBoard(parentSelector) {
 
 ShowBoard.prototype.render = function () {
   this.parentElement.innerHTML = this;
-  console.log("render")
   const lists = this.renderList(".show-board__content")
   lists.forEach((list) => {
+    list.addEventListeners();
     list.renderCards();
   });
-  this.listenStarClick()
-  this.listenClosedClick()
+  this.listenStarClick();
+  this.listenClosedClick();
 };
 
 ShowBoard.prototype.renderList = function (parentSelector) {
   const data = STORE.boardSelected.lists;
   const list__content = document.querySelector(parentSelector);
   const list_render = data.map((list_data) => {
-    //console.log(list_data)
     return new List(parentSelector, list_data);
   });
 
@@ -64,11 +63,9 @@ ShowBoard.prototype.listenStarClick = function () {
       const rsp = await boardService.starred(storeBoard.id, !storeBoard.starred)
       STORE.boardSelected = rsp
       this.render()
-
     } catch (error) {
       console.log(error)
     }
-
   })
 }
 
@@ -81,10 +78,8 @@ ShowBoard.prototype.listenClosedClick = function () {
       const rsp = await boardService.closed(storeBoard.id)
       STORE.boardSelected = rsp
       this.render()
-
     } catch (error) {
       console.log(error)
     }
-
   })
 }

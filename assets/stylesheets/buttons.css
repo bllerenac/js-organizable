@@ -51,3 +51,34 @@
     border-radius: 3px;
     border: none;
 }
+
+.btn_newCard{
+    text-decoration: none;
+    color: #5E6C84;
+    font-family: var(--roboto);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.btn_add_card{
+    width: 77px;
+    height: 32px;
+    color: white;
+    font-family: var(--roboto);
+    font-size: 14px;
+    line-height: 20px;
+    background: #5AAC44;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn_cancel_card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

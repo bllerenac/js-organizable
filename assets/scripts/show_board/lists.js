@@ -19,9 +19,16 @@ export default function List(parentSelector,list_data) {
           
           </div>
           <a href="#" class="btn_newCard">
-            <img src="./assets/images/closed.svg" />
+            <img src="./assets/images/add_card.png" />
             Add another Card
-            </a>        
+          </a>
+          <form class="form-create_card hidden">
+            <input name="card_name" placeholder="Enter a title for this card...">
+            <div>
+              <button class="btn_add_card" type="submit">Add Card</button>
+              <button class="btn_cancel_card"><img src="./assets/images/cancel_card.png"></button>
+            </div>
+          </form>        
         </article>
         `;
       };
@@ -34,11 +41,9 @@ List.prototype.generateCards = function(parentSelector) {
   const list = document.querySelector( `.list-${this.data.listId}`)
   const card_content =list.querySelector(parentSelector);
   const card_render = data.map((card_data) => {
-    //console.log(card_data)
     return new Card(".js_cards",card_data)
   });
   card_content.innerHTML = card_render.join("");
-  //console.log(card_render)
   return card_render
 }
 
@@ -47,7 +52,31 @@ List.prototype.renderCards = function(){
   cards.forEach( (card) => {
     card.renderLabels();
   });
-  //console.log(cards)
-  //cards.forEach( (card) =>{ });
 }
 
+List.prototype.addEventListeners = function(){
+  this.showAddcard();
+  this.hiddenAddcard();
+}
+
+List.prototype.showAddcard = function(){
+  const list = document.querySelector(`.list-${this.data.listId}`);
+  const form = list.querySelector(".form-create_card")
+  const button_show = list.querySelector(".btn_newCard");
+  console.log(button_show)
+  button_show.addEventListener("click", (e) =>{
+    button_show.classList.add("hidden");
+    form.classList.remove("hidden");
+  })
+}
+
+List.prototype.hiddenAddcard = function(){
+  const list = document.querySelector(`.list-${this.data.listId}`);
+  const form = list.querySelector(".form-create_card")
+  const button_show = list.querySelector(".btn_newCard");
+  const button_cancel = list.querySelector(".btn_cancel_card");
+  button_cancel.addEventListener("click", (e) =>{
+    form.classList.add("hidden");
+    button_show.classList.remove("hidden");
+  })
+}

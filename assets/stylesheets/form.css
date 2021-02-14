@@ -38,3 +38,33 @@
 .register-form__button{
     margin-top: 29px;
 }
+
+.form-create_card{
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    gap: 10px;
+}
+.form-create_card div{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.form-create_card input{
+    width: 224px;
+    height: 24px;
+    padding: 2px 8px;
+    background: #FFFFFF;
+    border: 1px solid #0079BF;
+    box-sizing: border-box;
+    border-radius: 3px;
+    outline: none;
+}
+
+.form-create_card input::placeholder{
+    font-family: var(--roboto);
+    font-size: 12px;
+    line-height: 20px;
+    color: #5E6C84;
+}

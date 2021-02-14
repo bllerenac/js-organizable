@@ -44,17 +44,12 @@ Boards.prototype.generateBoardsStarred = function(parentSelector) {
 };
 
 Boards.prototype.render = function () {
-
   this.parentElement.innerHTML = this;
   const boards = this.generateBoards(".js-boards-container")
-
-
   boards.forEach(board => {
     board.addEventListeners();
   });
-
   const starBoards = this.generateBoardsStarred(".js-starredBoards-container")
-
   starBoards.forEach(board => {
     board.addEventListeners();
   });

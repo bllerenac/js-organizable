@@ -15,8 +15,6 @@ ListService.prototype.all = (id) =>
     },
   });
 
-export default ListService;
-
 ListService.prototype.create = (id, name) =>
   apiFetch(`${BASE_URL}/lists/${id}/cards`,{
     method: "POST",
@@ -24,4 +22,6 @@ ListService.prototype.create = (id, name) =>
       Authorization: `Token token=${sessionStorage.getItem('token')}`,
       "Content-Type": "application/json",
     }, body: JSON.stringify({name, "desc": "This description is optional","closed": false}),
-  })
+  });
+
+export default ListService; 

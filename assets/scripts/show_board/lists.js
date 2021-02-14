@@ -1,6 +1,7 @@
 import STORE from "../store.js"
 import Card from "./cards.js"
-//show-board__content
+import CardService from "../services/card_service.js"
+
 export default function List(parentSelector,list_data) {
   if (!List.instance) {
     this.parentElement = document.querySelector(parentSelector);
@@ -57,6 +58,7 @@ List.prototype.renderCards = function(){
 List.prototype.addEventListeners = function(){
   this.showAddcard();
   this.hiddenAddcard();
+  this.FormCard();
 }
 
 List.prototype.showAddcard = function(){
@@ -78,5 +80,22 @@ List.prototype.hiddenAddcard = function(){
   button_cancel.addEventListener("click", (e) =>{
     form.classList.add("hidden");
     button_show.classList.remove("hidden");
+  })
+}
+
+List.prototype.FormCard = function(){
+  const list = document.querySelector(`.list-${this.data.listId}`);
+  const form = list.querySelector(".form-create_card")
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault;
+    const carService = new CardService();
+    try {
+      const createCard = await carService.create(
+        this.data.listId,
+        e.target.card_name.value,
+      );
+    } catch (e) {
+      alert(e.message);
+    }
   })
 }

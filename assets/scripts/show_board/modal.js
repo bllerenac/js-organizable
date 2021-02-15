@@ -24,14 +24,28 @@ Modal.prototype.render = function () {
     contentModal.innerHTML = this
     document.body.appendChild(contentModal)
     this.close()
+    this.closeContent()
 }
 
 
 Modal.prototype.close = function () {
     const closeBtn = document.querySelector(".js-close-modal")
-    closeBtn.addEventListener("click",(e)=>{
+    closeBtn.addEventListener("click", (e) => {
         const cModal = document.querySelector(".content-modal")
         cModal.remove()
+
+    })
+}
+
+Modal.prototype.closeContent = function () {
+    const closeBtn = document.querySelector(".content-modal")
+    closeBtn.addEventListener("click", (e) => {
+        console.log(e.target)
+        if (closeBtn == e.target) {
+            const cModal = document.querySelector(".content-modal")
+            cModal.remove()
+
+        }
 
     })
 }

@@ -3,10 +3,7 @@ import BoardService from "../services/boardService.js"
 import Board from "../main.js"
 
 export default function Tooltip(){
-  if(!Tooltip.instance) {
-    Tooltip.instance = this;
-  }
-  return Tooltip.instance;
+
 };
 
 Tooltip.prototype.render = function () {
@@ -51,18 +48,23 @@ Tooltip.prototype.color_change = function (){
 Tooltip.prototype.form_submit = function (){
   const tool_form = document.querySelector(".tool_new_board");
   tool_form.addEventListener("submit", async (e) =>{
+    console.log(e.target)
     e.preventDefault();
     const new_board = document.querySelector(".tool_board"); 
-    const color_board = String(new_board.style.backgroundColor)
+    const color_board = String(new_board.style.backgroundColor) || "indianred"
     const name = e.target.board_name.value;
     const closed = false;
     const color = color_board;
     const starred = false;
     try {
       const boardService = new BoardService();
-      const data = await boardService.create(name,closed,color,starred);
-      const board = new Board(".js-content");
-      board.render();
+      if(name && color){
+        const data = await boardService.create(name,closed,color,starred);
+        const board = new Board(".js-content");
+        STORE.boards = await boardService.all()
+        board.render();
+      }
+      
     } catch (e) {
       alert(e.message);
     }

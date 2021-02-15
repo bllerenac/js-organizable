@@ -2,6 +2,7 @@ import STORE from "./store.js";
 import List from "./show_board/lists.js"
 import Card from "./show_board/cards.js";
 import BoardService from "./services/boardService.js";
+import ListService from "./services/list_service.js"
 import Boards from "./my_boards.js";
 
 export default function ShowBoard(parentSelector) {
@@ -13,19 +14,32 @@ export default function ShowBoard(parentSelector) {
       let { name, color, starred } = STORE.boardSelected
       return `
       <section class="show-board ${color}">
-      <div class="show-board__header">
-        <h3>${name}</h3>
+        <div class="show-board__header">
+          <h3>${name}</h3>
 
-        <button class="js-star-board btn-header-show">
-          ${starred ? `<img src="./assets/images/starselect.svg" />` : `<img src="./assets/images/star.svg" />`}  
-        
-        </button>
-        <button class="js-closed-board btn-header-show">
-          <img src="./assets/images/closed.svg" />
-        </button>
-      </div>
-      <div class="show-board__content">Aqui pones tu contenio</div>
-    </section>
+          <button class="js-star-board btn-header-show">
+            ${starred ? `<img src="./assets/images/starselect.svg" />` : `<img src="./assets/images/star.svg" />`}  
+          
+          </button>
+          <button class="js-closed-board btn-header-show">
+            <img src="./assets/images/closed.svg" />
+          </button>
+        </div>
+        <div class="show_board_lists">
+          <div class="show-board__content">Aqui pones tu contenio</div>
+          <button href="#" class="btn_newList">
+                <img src="./assets/images/add_list.png" />
+                Add another List
+          </button>
+          <form class="form_new_list hidden">
+            <input name="list_name" placeholder="Enter list title...">
+            <div>
+              <button type="submit" class="btn_add_card" type="submit">Add List</button>
+              <button class="btn_cancel_card"><img src="./assets/images/cancel_card.png"></button>
+            </div>
+          </form>
+        </div>
+      </section>
         `;
     };
     ShowBoard.instance = this;
@@ -42,6 +56,9 @@ ShowBoard.prototype.render = function () {
   });
   this.listenStarClick();
   this.listenClosedClick();
+  this.ShowForm();
+  this.HiddenForm();
+  this.FormList();
 };
 
 ShowBoard.prototype.renderList = function (parentSelector) {
@@ -80,6 +97,49 @@ ShowBoard.prototype.listenClosedClick = function () {
       this.render()
     } catch (error) {
       console.log(error)
+    }
+  })
+}
+
+//Funciones Formulario List//
+ShowBoard.prototype.ShowForm = function(){
+  const content = document.querySelector(".show-board")
+  const form = content.querySelector(".form_new_list")
+  const button_show = content.querySelector(".btn_newList")
+  button_show.addEventListener("click", (e)=>{
+    console.log("show")
+    button_show.classList.add("hidden");
+    form.classList.remove("hidden");
+  })
+}
+ShowBoard.prototype.HiddenForm = function(){
+  const content = document.querySelector(".show-board")
+  const form = content.querySelector(".form_new_list")
+  const button_hidden = form.querySelector(".btn_cancel_card")
+  const button_show = content.querySelector(".btn_newList")
+  button_hidden.addEventListener("click", (e)=>{
+    form.classList.add("hidden")
+    button_show.classList.remove("hidden")
+  })
+}
+
+ShowBoard.prototype.FormList = function(){
+  const board = document.querySelector(".show-board")
+  const form = board.querySelector(".form_new_list")
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const listService = new ListService();
+    try {
+      const create_list = await listService.create(
+        STORE.boardSelected.id,
+        e.target.list_name.value,
+      );
+    const board_data = new ListService()
+    STORE.boardSelected = await board_data.all(STORE.boardSelected.id)
+    const showBoard = new ShowBoard('.js-content');
+    showBoard.render();
+    } catch (e) {
+      alert(e.message);
     }
   })
 }

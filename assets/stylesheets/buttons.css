@@ -37,6 +37,30 @@
     border: none;
 }
 
+.btn_newList{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+    gap: 6px;
+    width: 272px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.24);
+    border: none;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    font-family: var(--roboto);
+    font-size: 14px;
+    line-height: 20px;
+    outline: none;
+    cursor: pointer;
+}
+ .btn_newList img{
+     width: 12.25px;
+     height: 12.25px;
+ }
+
 .btn-card{
     display: flex;
     flex-direction: column;

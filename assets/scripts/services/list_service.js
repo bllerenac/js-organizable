@@ -16,12 +16,12 @@ ListService.prototype.all = (id) =>
   });
 
 ListService.prototype.create = (id, name) =>
-  apiFetch(`${BASE_URL}/lists/${id}/cards`,{
+  apiFetch(`${BASE_URL}/boards/${id}/lists`,{
     method: "POST",
     headers: {
       Authorization: `Token token=${sessionStorage.getItem('token')}`,
       "Content-Type": "application/json",
-    }, body: JSON.stringify({name, "desc": "This description is optional","closed": false}),
+    }, body: JSON.stringify({name, "closed": false}),
   });
 
 export default ListService; 

@@ -75,6 +75,28 @@
     }
 /*---------------*/
 
+/*Form update List*/
+.form_newList_tittle input{
+    background-color: transparent;
+    border: none;
+    font-family: var(--roboto);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    outline: none;
+}
+    .form_newList_tittle input::placeholder{
+        color: #172B4D;
+    }
+    .form_newList_tittle input:focus{
+        background: #FFFFFF;
+        border: 1px solid #0079BF;
+        box-sizing: border-box;
+        border-radius: 3px;
+    }
+/*---------------*/
+
 /*---form Card---*/
 .form-create_card{
     display: flex;

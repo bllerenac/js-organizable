@@ -12,7 +12,9 @@ export default function List(parentSelector,list_data) {
         return `
         <section class="list_content list-${this.data.listId}">
           <div class="list_title">
-            <h3>${this.data.name}</h2>
+            <form class="form_newList_tittle">
+              <input name="new_list_name" placeholder="${this.data.name}">
+            </form>
             <button class="btn_close_list">
               <img src="./assets/images/close_list.png" />
             </button>

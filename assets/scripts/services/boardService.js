@@ -62,4 +62,14 @@ BoardService.prototype.create = (name, closed, color, starred) =>
     }, body: JSON.stringify({ name, closed, color, starred}),
   });
 
+
+  BoardService.prototype.show = (id) =>
+  apiFetch(`${BASE_URL}/boards/${id}`, {
+    method: "GET" ,
+    headers: {
+      Authorization: `Token token=${sessionStorage.getItem('token')}`,
+    }
+  });
+
+
 export default BoardService;

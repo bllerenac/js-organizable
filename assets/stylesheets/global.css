@@ -179,6 +179,11 @@ button{
   align-items: center;
 }
 
+.modal__content{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin-top: 20px;
+}
 .close-modal{
   border: none;
   background-color: white;
@@ -188,3 +193,72 @@ button{
   outline: none;
 }
 
+.description{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.txt-description{
+  border: none;
+  color: #172B4D;
+  background-color: transparent;
+  padding: 2px 8px;
+
+}
+ input{
+   outline: none;
+ }
+.description-active{
+  background: #EBECF0;
+  padding: 8px;
+}
+
+.content-actions{
+  display: none;
+}
+
+.txt-active{
+
+  border: 1px solid #0079BF !important;
+
+}
+.txt-active2{
+
+  border: 1px solid #0079BF !important;
+
+}
+.txt-name{
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  color: #172B4D;
+  background-color: transparent;
+}
+
+.btn-edit{
+  background: rgba(9, 30, 66, 0.04);
+border-radius: 3px;
+border: none;
+width: 66px;
+height: 24px;
+}
+.btn-content-close{
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+
+
+}
+
+.btn-content-action{
+  width: 77px;
+  height: 24px;
+
+
+  background: #5AAC44;
+  border-radius: 3px;
+
+  border: none;
+  color: white;
+}

@@ -1,5 +1,6 @@
 import STORE from "../store.js"
 import Label from "./card_label.js"
+import Modal from "./modal.js";
 
 export default function Card(parentSelector,card_data) {
   if (!Card.instance) {
@@ -10,7 +11,7 @@ export default function Card(parentSelector,card_data) {
         <button class="btn-card card-${this.data.cardId}">
           <div class="card_labels">
           </div>
-          ${this.data.name}
+          <a class="popup-${this.data.cardId}">${this.data.name}</a>
         </button>
         `;
       };
@@ -26,6 +27,17 @@ Card.prototype.generateLabel = function (parentSelector) {
   });
   label_content.innerHTML = label_render.join("");
   return label_render
+}
+
+
+Card.prototype.popup = function (parentSelector) {
+  
+  const card = document.querySelector(`.popup-${this.data.cardId}`)
+  card.addEventListener("click",()=>{
+    console.log("asdasd")
+    const modal = new Modal(this.data)
+    modal.render()
+  })
 }
 
 Card.prototype.renderLabels = function () {

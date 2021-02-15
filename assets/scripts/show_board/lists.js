@@ -53,6 +53,7 @@ List.prototype.renderCards = function(){
   const cards = this.generateCards(`.js_cards`);
   cards.forEach( (card) => {
     card.renderLabels();
+    card.popup();
   });
 }
 
@@ -101,6 +102,5 @@ List.prototype.FormCard = function(){
     } catch (e) {
       alert(e.message);
     }
-    
   })
 }

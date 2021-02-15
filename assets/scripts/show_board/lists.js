@@ -52,6 +52,7 @@ List.prototype.renderCards = function(){
   const cards = this.generateCards(`.js_cards`);
   cards.forEach( (card) => {
     card.renderLabels();
+    card.popup()
   });
 }
 

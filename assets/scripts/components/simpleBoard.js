@@ -32,7 +32,6 @@ SimpleBoard.prototype.addEventListeners = function () {
     this.showBoard()
 };
 
-// Poner nombre mas apropiado a boton po favo :')
 
 SimpleBoard.prototype.listenClosedClick = function () {
     const closedButton = this.parentElement.querySelector(`.js-closed-board-${this.data.id}`);
@@ -74,14 +73,12 @@ SimpleBoard.prototype.showBoard = function () {
     const starButton = this.parentElement.querySelector(`.js-show-board-${this.data.id}`);
     starButton.addEventListener("click", async (e) => {
         try {
-            console.log("Click show board")
             const board_data = new ListService()
             STORE.boardSelected = await board_data.all(this.data.id)
-            console.log(STORE.boardSelected.id)
             const showBoard = new ShowBoard('.js-content');
             showBoard.render()
-        } catch (error) {
-            console.log(error)
+        } catch (e) {
+            alert(e.message)
         }
 
     })

@@ -17,3 +17,12 @@
   border: none;
   border-radius: 4px;
 }
+
+.dragging{
+  opacity: 0;
+}
+
+.dashed{
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px dashed black;
+}

@@ -77,6 +77,7 @@ SimpleBoard.prototype.showBoard = function () {
             console.log("Click show board")
             const board_data = new ListService()
             STORE.boardSelected = await board_data.all(this.data.id)
+            console.log(STORE.boardSelected.id)
             const showBoard = new ShowBoard('.js-content');
             showBoard.render()
         } catch (error) {

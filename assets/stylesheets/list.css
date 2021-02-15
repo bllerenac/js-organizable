@@ -1,6 +1,7 @@
 .show-board__content{
   display: flex;
   flex-direction: row;
+  width: auto;
   gap: 8px;
 }
 .list_content{
@@ -11,6 +12,7 @@
   gap: 8px;
   width: 272px;
   border-radius: 3px;
+  margin-bottom: auto;
 }
 
 .list_title{

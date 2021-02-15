@@ -36,7 +36,7 @@ export default function ShowBoard(parentSelector) {
             <input name="list_name" placeholder="Enter list title...">
             <div>
               <button type="submit" class="btn_add_card" type="submit">Add List</button>
-              <button class="btn_cancel_card"><img src="./assets/images/cancel_card.png"></button>
+              <button type="button" class="btn_cancel_card"><img src="./assets/images/cancel_card.png"></button>
             </div>
           </form>
         </div>

@@ -30,7 +30,7 @@ export default function List(parentSelector,list_data) {
             <input name="card_name" placeholder="Enter a title for this card...">
             <div>
               <button class="btn_add_card" type="submit">Add Card</button>
-              <button class="btn_cancel_card"><img src="./assets/images/cancel_card.png"></button>
+              <button class="btn_cancel_card" type="button"><img src="./assets/images/cancel_card.png"></button>
             </div>
           </form>        
         </section>
@@ -45,7 +45,8 @@ List.prototype.generateCards = function(parentSelector) {
   const list = document.querySelector( `.list-${this.data.listId}`)
   const card_content =list.querySelector(parentSelector);
   const card_render = data.map((card_data) => {
-    return new Card(".js_cards",card_data)
+    //const show_card_data = this.Card_Data(this.data.listId,card_data.card_Id)
+    return new Card(".js_cards", card_data, this.data.listId)
   });
   card_content.innerHTML = card_render.join("");
   return card_render
@@ -54,8 +55,7 @@ List.prototype.generateCards = function(parentSelector) {
 List.prototype.renderCards = function(){
   const cards = this.generateCards(`.js_cards`);
   cards.forEach( (card) => {
-    card.renderLabels();
-    card.popup();
+    card.addEventListeners();
   });
 }
 
@@ -63,6 +63,7 @@ List.prototype.addEventListeners = function(){
   this.showAddcard();
   this.hiddenAddcard();
   this.FormCard();
+  //this.Drop();
 }
 
 List.prototype.showAddcard = function(){
@@ -105,4 +106,13 @@ List.prototype.FormCard = function(){
       alert(e.message);
     }
   })
+}
+
+List.prototype.Drop = function () {
+  const list_container = document.querySelector(`.list-${this.data.listId}`);
+  console.log(list_container)
+  list_container.addEventListener("dragover",(e) => {
+    e.preventDefault();
+  });
+  
 }

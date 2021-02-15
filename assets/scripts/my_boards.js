@@ -16,6 +16,7 @@ export default function Boards(parentSelector) {
           <div class="content-list">
             <h3>My Boards</h3>
             <ul class="js-boards-container list-boards"></ul>
+            <button class="btn_new_board">Create a new Board</button>
           </div>
         </section>
         `;
@@ -44,6 +45,7 @@ Boards.prototype.generateBoardsStarred = function(parentSelector) {
 };
 
 Boards.prototype.render = function () {
+  this.parentElement = document.querySelector(this.parentSelector);
   this.parentElement.innerHTML = this;
   const boards = this.generateBoards(".js-boards-container")
   boards.forEach(board => {

@@ -4,6 +4,7 @@ import Card from "./show_board/cards.js";
 import BoardService from "./services/boardService.js";
 import ListService from "./services/list_service.js"
 import Boards from "./my_boards.js";
+import Board from "./main.js";
 
 export default function ShowBoard(parentSelector) {
   if (!ShowBoard.instance) {
@@ -90,11 +91,9 @@ ShowBoard.prototype.listenClosedClick = function () {
   const closedButton = this.parentElement.querySelector(`.js-closed-board`);
   closedButton.addEventListener("click", async (e) => {
     try {
-      const boardService = new BoardService()
-      let storeBoard = STORE.boardSelected
-      const rsp = await boardService.closed(storeBoard.id)
-      STORE.boardSelected = rsp
-      this.render()
+      console.log("asd")
+      const main = Board()
+      main.render()
     } catch (error) {
       console.log(error)
     }

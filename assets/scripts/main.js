@@ -24,7 +24,7 @@ export default function Board(parentSelector) {
               <article class="container--options js-container-options">
                   <p>Your Boards</p>
               </article>
-              <button class="btn_new_board">Create a new Board</button>
+              
               <form class="tool_new_board hidden">
                 <div class="container_tool_board_colors">
                   <div class="tool_board">

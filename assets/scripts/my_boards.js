@@ -16,6 +16,7 @@ export default function Boards(parentSelector) {
           <div class="content-list">
             <h3>My Boards</h3>
             <ul class="js-boards-container list-boards"></ul>
+            <button class="btn_new_board">Create a new Board</button>
           </div>
         </section>
         `;

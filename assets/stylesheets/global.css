@@ -82,6 +82,10 @@ main {
   gap: 10px;
 }
 
+.pink{
+  background-color: pink;
+}
+
 .blue{
   background-color: #0079BF;
 }
@@ -98,16 +102,16 @@ main {
   background: #B04632;
 }
 
-.-violet{
+.purple{
   background: #89609E;
 }
 
 
-.green{
+.lime{
   background: #4BBF6B;
 }
 
-.lightgreen{
+.sky{
   background: #0AAECB;
 }
 
@@ -120,31 +124,34 @@ main {
   background: #F7DC6F;
 }
 
-.IndianRed{
+.orange{
+  background: orange;
+}
+.indianred{
   background: indianred;
 }
-.MediumSlateBlue{
+.mediumslateblue{
   background: mediumslateblue;
 }
-.YellowGreen{
+.yellowgreen{
 background: yellowgreen;
 }
-.LightBlue{
+.lightblue{
   background: lightblue;
 }
-.Chocolate{
+.chocolate{
   background: chocolate;
 }
-.SteelBlue{
+.steelblue{
 background: steelblue;
 }
-.MediumAquamarine{
+.mediumaquamarine{
 background: mediumaquamarine;
 }
-.Coral{
+.coral{
 background: coral;
 }
-.GreenYellow{
+.greenyellow{
   background: greenyellow;
 }
 

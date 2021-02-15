@@ -1,11 +1,15 @@
-.container,
-.container--navbar {
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.container--navbar{
     display: flex;
 }
 
 .container {
     width: 900px;
-    min-height: 860px;
+    min-height: 100vh;
     flex-direction: row;
 }
 

@@ -22,7 +22,7 @@ export default function Card(parentSelector, card_data, listId) {
 
 Card.prototype.addEventListeners = function () {
   this.renderLabels();
-  this.DragEvents();
+  //this.DragEvents();
   this.popup();
 }
 

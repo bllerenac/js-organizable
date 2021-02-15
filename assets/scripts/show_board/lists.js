@@ -63,7 +63,7 @@ List.prototype.addEventListeners = function(){
   this.showAddcard();
   this.hiddenAddcard();
   this.FormCard();
-  this.Drop();
+  //this.Drop();
 }
 
 List.prototype.showAddcard = function(){

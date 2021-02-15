@@ -29,12 +29,9 @@ Card.prototype.generateLabel = function (parentSelector) {
   return label_render
 }
 
-
-Card.prototype.popup = function (parentSelector) {
-  
+Card.prototype.popup = function () {
   const card = document.querySelector(`.popup-${this.data.cardId}`)
   card.addEventListener("click",()=>{
-    console.log("asdasd")
     const modal = new Modal(this.data)
     modal.render()
   })
